@@ -11,8 +11,6 @@ Original file is located at
 
 !pip install python-flint
 
-!python cpu_main.py
-
 import os
 os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 
@@ -936,6 +934,7 @@ def main():
     cuda.synchronize()
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
+    print(f"兩個密文張量相乘的平均行時間: {elapsed_time:.4f} 秒")
 
     start_time = time.perf_counter()
     result = scheme.decrypt_pairwise_upon(cts_a)
@@ -978,6 +977,7 @@ def main():
     cuda.synchronize()
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
+    print(f"一個個密文張量leftrote_broadcast_into生成的平均行時間: {elapsed_time:.4f} 秒")
 
     start_time = time.perf_counter()
     result = scheme.decrypt_pairwise_upon(cts_a)
@@ -1022,7 +1022,7 @@ def main():
     cuda.synchronize()
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
-    print(f"兩個密文相加的平均行時間: {elapsed_time:.4f} 秒")
+    print(f"兩個密文相加add_pairwise_into的平均行時間: {elapsed_time:.4f} 秒")
 
     start_time = time.perf_counter()
     result = scheme.decrypt_pairwise_upon(cts_a)
@@ -1066,7 +1066,7 @@ def main():
     cuda.synchronize()
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
-    print(f"兩個密文相減的平均行時間: {elapsed_time:.4f} 秒")
+    print(f"兩個密文相減sub_pairwise_into的平均行時間: {elapsed_time:.4f} 秒")
 
     start_time = time.perf_counter()
     result = scheme.decrypt_pairwise_upon(cts_a)
@@ -1111,7 +1111,7 @@ def main():
     cuda.synchronize()
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
-    print(f"一個密文張量與常數broadcast相加的平均行時間: {elapsed_time:.4f} 秒")
+    print(f"一個密文張量與常數addconst_broadcast_into相加的平均行時間: {elapsed_time:.4f} 秒")
 
     start_time = time.perf_counter()
     result = scheme.decrypt_pairwise_upon(cts_a)
@@ -1160,7 +1160,7 @@ def main():
     cuda.synchronize()
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
-    print(f"一個密文張量與常數pairwise相加的平均行時間: {elapsed_time:.4f} 秒")
+    print(f"一個密文張量與常數addconst_pairwise_into相加的平均行時間: {elapsed_time:.4f} 秒")
 
     start_time = time.perf_counter()
     result = scheme.decrypt_pairwise_upon(cts_a)
@@ -1207,7 +1207,7 @@ def main():
     cuda.synchronize()
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
-    print(f"一個密文張量I乘法imult_pairwise的平均行時間: {elapsed_time:.4f} 秒")
+    print(f"一個密文張量I乘法imult_pairwise_into的平均行時間: {elapsed_time:.4f} 秒")
 
     start_time = time.perf_counter()
     result = scheme.decrypt_pairwise_upon(cts_a)
@@ -1252,7 +1252,7 @@ def main():
     cuda.synchronize()
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
-    print(f"一個密文張量常數乘法multconst_broadcast的平均行時間: {elapsed_time:.4f} 秒")
+    print(f"一個密文張量常數乘法multconst_broadcast_into的平均行時間: {elapsed_time:.4f} 秒")
 
     start_time = time.perf_counter()
     result = scheme.decrypt_pairwise_upon(cts_a)
@@ -1296,7 +1296,7 @@ def main():
     cuda.synchronize()
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
-    print(f"一個密文張量multconstvecs_pairwise的平均行時間: {elapsed_time:.4f} 秒")
+    print(f"一個密文張量multconstvec_pairwise_into的平均行時間: {elapsed_time:.4f} 秒")
 
     start_time = time.perf_counter()
     result = scheme.decrypt_pairwise_upon(cts_a)
@@ -1340,7 +1340,7 @@ def main():
     cuda.synchronize()
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
-    print(f"一個密文張量共軛算法conjugate_pairwise的平均行時間: {elapsed_time:.4f} 秒")
+    print(f"一個密文張量共軛算法conjugate_pairwise_into的平均行時間: {elapsed_time:.4f} 秒")
 
     start_time = time.perf_counter()
     result = scheme.decrypt_pairwise_upon(cts_a)
